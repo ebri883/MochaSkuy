@@ -19,8 +19,8 @@ class ComplexGrid extends React.Component {
       profilepic: '',
     }
     componentDidMount = async () => {
-      const a = await axios
-      .get(`https://moklet-sosmed.herokuapp.com/api/myprofile/get/krnhrw`,  
+      const a = 
+      await axios.get(`https://moklet-sosmed.herokuapp.com/api/myprofile/get/krnhrw`,  
           {
               auth: {
                   username: 'moca',
@@ -28,15 +28,14 @@ class ComplexGrid extends React.Component {
                 }
           }
       );
-      console.log(a)
       this.setState({
           namadpn: a.data.data.namadpn,
           namablkg:a.data.data.namablkg,
           username:a.data.data.username
       })
 
-      const b = await axios
-      .get(`https://moklet-sosmed.herokuapp.com/followingcount/krnhrw`,  
+      const b = 
+      await axios.get(`https://moklet-sosmed.herokuapp.com/followingcount/krnhrw`,  
           {
               auth: {
                   username: 'moca',
@@ -44,13 +43,12 @@ class ComplexGrid extends React.Component {
                 }
           }
       );
-      console.log(b)
       this.setState({
           follow: b.data.data
       })
 
-      const c = await axios
-      .get(`https://moklet-sosmed.herokuapp.com/api/myprofile/getpost/krnhrw`,  
+      const c =
+      await axios.get(`https://moklet-sosmed.herokuapp.com/api/myprofile/getpost/krnhrw`,  
           {
               auth: {
                   username: 'moca',
@@ -58,7 +56,6 @@ class ComplexGrid extends React.Component {
                 }
           }
       );
-      console.log(c)
       this.setState({
           post: c.data.data
       })
@@ -72,14 +69,12 @@ class ComplexGrid extends React.Component {
                 }
           }
       );
-      console.log(d)
       this.setState({
           follower: d.data.data
       })
 
       const e = await axios
       .get(`https://randomuser.me/api/?results=69`);
-      console.log(e)
       this.setState({
           profilepic: e.data.results[0].picture.thumbnail
       })

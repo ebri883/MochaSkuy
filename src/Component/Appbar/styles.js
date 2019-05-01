@@ -2,9 +2,6 @@ import { fade } from '@material-ui/core/styles/colorManipulator';
 
 const drawerWidth = 240;
 const styles = theme => ({
-    root: {
-      width: '100%',
-    },
     grow: {
       flexGrow: 1,
     },

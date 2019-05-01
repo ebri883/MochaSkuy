@@ -21,8 +21,8 @@ class Intro extends React.Component{
     }
     componentDidMount = async () => {
         // const aku = 'https://moklet-sosmed.herokuapp.com/intro';
-        const response = await axios
-        .get(`https://moklet-sosmed.herokuapp.com/intro/krnhrw`,
+        const response = 
+        await axios.get(`https://moklet-sosmed.herokuapp.com/intro/krnhrw`,
             {
                 auth: {
                     username: 'moca',
@@ -30,7 +30,6 @@ class Intro extends React.Component{
                   }
             }
         );
-        console.log(response)
         this.setState({
             alamat: response.data.data[0].alamat,
             asal:response.data.data[0].asal,
@@ -40,7 +39,6 @@ class Intro extends React.Component{
 
     render(){
         const { classes } = this.props;
-        console.log(this.state)
         return(
             <div className={classes.root}>
             <Paper className={classes.paper}>
@@ -80,8 +78,8 @@ class Intro extends React.Component{
                                     <Typography variant="body2">Joined in January 2019</Typography>
                                 </ListItem>
                             </Grid>
-
-                        </Grid>                    </Grid>
+                        </Grid>                 
+                   </Grid>
                 </Grid>
             </Paper>
         </div>
@@ -89,7 +87,6 @@ class Intro extends React.Component{
         )
     }
 }
-console.log(Intro)  
 export default Intro;
 
 Intro.propTypes = {

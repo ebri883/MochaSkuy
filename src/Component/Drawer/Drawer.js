@@ -1,9 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
+import Appbar from '../Appbar';
 import PropTypes from 'prop-types';
-// import Drawer from '@material-ui/core/Drawer';
-// import List from '@material-ui/core/List';
-// import Typography from '@material-ui/core/Typography';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -17,11 +15,12 @@ import { Divider, Drawer } from '@material-ui/core';
 
 
 export default function PermanentDrawerLeft(props) {
-  const { classes } = props;
+  const { children, classes } = props;
 
   return (
     <div className={classes.root}>
       {/* <CssBaseline /> */}
+      <Appbar />
       <Drawer
         className={classes.drawer}
         variant="permanent"
@@ -67,12 +66,16 @@ export default function PermanentDrawerLeft(props) {
           <ListItemText inset primary="Settings" />
         </ListItem>
       </Drawer>
+      <div className={classes.content}>
+        {children}
+      </div>
     </div>
   );
 }
 
 PermanentDrawerLeft.propTypes = {
   classes: PropTypes.object.isRequired,
+  children: PropTypes.node,
 };
 
 
